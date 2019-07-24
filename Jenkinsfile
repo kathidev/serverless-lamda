@@ -1,8 +1,8 @@
 pipeline {
   agent any
   tools {
-        gradle 'GRADLE_HOME'
-        jdk 'JAVA_HOME'
+        gradle'GRADLE_HOME'
+        jdk'JAVA_HOME'
   }
   stages {
     stage('Clone repository') {
