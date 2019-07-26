@@ -24,7 +24,9 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'serverless config credentials --provider aws --key $AWS_ACCESS_KEY_ID  --secret $AWS_SECRET_ACCESS_KEY'
+        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+        
+}
         sh 'serverless deploy'
       }
     }
