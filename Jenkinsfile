@@ -1,3 +1,4 @@
+#pipeline coding
 pipeline {
   agent any
   tools {
